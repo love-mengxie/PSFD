@@ -6,7 +6,7 @@
 
   <!-- <meta http-equiv="x-ua-compatible" content="ie=edge"> -->
 
-  <title>Embodied AI Safety</title>
+  <title>PSFD</title>
 
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -427,7 +427,7 @@
         <ul class="nav navbar-nav">
           <li> <a href="./index.html#a_quick_glance" style="color: white; font-weight: 500">Quick Glance</a></li>
           <li> <a href="./index.html#paper_overview" style="color: white; font-weight: 500">Our Paper</a></li>
-          <li> <a href="./index.html#ethics" style="color: white; font-weight: 500">Ethics and Disclosure</a></li>
+          <li> <a href="./index.html#ethics" style="color: white; font-weight: 500">Examples</a></li>
         </ul>
       </div>
 
@@ -604,12 +604,12 @@
           <figcaption> <p class="text-justify">
 <!--              以下是caption-->
               <span style="font-weight: bold; font-size: larger;">Figure 1. </span>
-              Image editing results by Paint by Example [13], with
+              Image editing results by Paint by Example, with
                   and without our defenses. Attackers start by selecting a victim
                   image (a), then choose an editing area (mask area) and a
-                  reference image to produce high-quality fakes (b). Our PSFD-U
+              reference image to produce high-quality fakes (b). Our<b><i> PSFD-U</i></b>
                   maximizes the disparity between the manipulated and intended
-                  edits (c). Meanwhile PSFD-T guides the edited image to align
+              edits (c). Meanwhile <b><i>PSFD-T </i></b>guides the edited image to align
                   closely with a specific target style (d). Both methods effectively
                   undermine malicious editing efforts.</p>
           </figcaption>
@@ -622,22 +622,21 @@
             The advancement of diffusion models has threatened
             image authenticity by enabling highly realistic fakes. Proactive
             defense offers protection by adding a "protective layer" that
-            resists such manipulation. Current approaches focus on text-
-            guided editing but are less effective for the more challenging
-            exemplar-guided tasks. To bridge this gap, we propose Proactive
-            Spatial-Frequency Defense (PSFD), a novel proactive defense for
-            exemplar-guided image editing. At the heart of PSFD is a repur-
+            resists such manipulation. Current approaches focus on text-guided editing but are less effective for the more challenging
+            exemplar-guided tasks. <b><i>To bridge this gap, we propose Proactive
+            Spatial-Frequency Defense (<b><i>PSFD</i></b>), a novel proactive defense for
+            exemplar-guided image editing. </i></b>At the heart of <b><i>PSFD </i></b> is a repur-
             posed adversarial attack technique that adds subtle perturbations
             to make images immune to edit. We apply protections in both
             the frequency and spatial domains. In the spatial domain, we
             craft perturbations that force visual encoders to map the image
             to "bad" epresentations, disrupting feature extraction. In the
             frequency domain, we tweak the high-frequency components
-            to distort the image’s texture information. To meet different
+            to distort the image's texture information. To meet different
             application scenarios, we design two optimization strategies:
-            PSFD-U that aims to generate maximal variation and PSFD-T
-            that seeks to achieve specific editing styles. Extensive experiments
-            on MS-COCO and ImageNet demonstrate PSFD's strong defensive
+            <b><i>PSFD-U</i></b> that aims to generate maximal variation and <b><i>PSFD-T</i></b>
+             that seeks to achieve specific editing styles. Extensive experiments
+            on MS-COCO and ImageNet demonstrate <b><i>PSFD's</i></b> strong defensive
             capabilities and transferability. </div>
         <center>
           <img src="./overview.png" class="img-responsive" alt="overview" width="100%"
@@ -645,10 +644,10 @@
           <figcaption> <p class="text-justify">
 <!--              以下是caption-->
               <span style="font-weight: bold; font-size: larger;">Figure 2. </span>
-              (Overview) LLM-based embodied AI face three risks in real-world applications:
-              <strong><span class="blue-text">(a):</span></strong> inducing harmful behaviors by leveraging jailbroken LLMs;
-              <strong><span class="blue-text">(b):</span></strong> safety misalignment between action and linguistic output spaces (i.e., verbally refuses response but still acts);
-              <strong><span class="blue-text">(c):</span></strong> conceptual deception inducing unrecognized harmful behaviors.
+              The framework of the proposed PSFD.
+<!--              <strong><span class="blue-text">(a):</span></strong> inducing harmful behaviors by leveraging jailbroken LLMs;-->
+<!--              <strong><span class="blue-text">(b):</span></strong> safety misalignment between action and linguistic output spaces (i.e., verbally refuses response but still acts);-->
+<!--              <strong><span class="blue-text">(c):</span></strong> conceptual deception inducing unrecognized harmful behaviors.-->
              </p>
           </figcaption>
         </center>
@@ -799,87 +798,106 @@
     <div class="row">
       <div class="col-md-10 col-md-offset-1">
 
-        <h3 id="ethics">Ethics and Disclosure</h3>
+        <h3 id="ethics">Experimental Demonstration</h3>
+          <center>
+
+          <img src="./example.png" class="img-responsive" alt="overview" width="70%"
+               style="margin:auto;padding-top: 1em;padding-bottom: 10px">
+              <figcaption><p class="text-justify"><span style="font-weight: bold; font-size: larger;">Figure 3. </span>
+              Visualizations of the transferability study.
+              <!--              <strong><span class="blue-text">(a):</span></strong> inducing harmful behaviors by leveraging jailbroken LLMs;-->
+              <!--              <strong><span class="blue-text">(b):</span></strong> safety misalignment between action and linguistic output spaces (i.e., verbally refuses response but still acts);-->
+              <!--              <strong><span class="blue-text">(c):</span></strong> conceptual deception inducing unrecognized harmful behaviors.-->
+              </p>
+                  </figcaption>
+          </center>
         <div class="text-justify">
         <ul>
             <li>
                <p>
-                This research is devoted to examining the security and risk issues associated with applying LLMs and VLMs to embodied AI. Our ultimate goal is to enhance the safety and reliability of embodied AI systems, thereby making a positive contribution to society. This research includes examples that may be considered harmful, offensive, or otherwise inappropriate. These examples are included solely for research purposes to illustrate vulnerabilities and enhance the security of embodied AI systems. They do not reflect the personal views or beliefs of the authors. We are committed to principles of respect for all individuals and strongly oppose any form of crime or violence. Some sensitive details in the examples have been redacted to minimize potential harm. Furthermore, we have taken comprehensive measures to ensure the safety and well-being of all participants involved in this study.
-                In this paper, We provide comprehensive documentation of our experimental results to enable other researchers to independently replicate and validate our findings using publicly available benchmarks. Our commitment is to enhance the security of language models and encourage all stakeholders to address the associated risks. Providers of LLMs may leverage our discoveries to implement new mitigation strategies that improve the security of their models and APIs, even though these strategies were not available during our experiments. We believe that in order to improve the safety of model deployment, it is worth accepting the increased difficulty in reproducibility.
-                </p>
+                   We study the defense transferability of <b><i>PSFD</i></b>  across three image editing methods:
+                   <b><i>PBE</i></b>, <b><i>VCT</i></b>,
+                   <b><i>ControlNet</i></b>. The visualizations of editing results for immunized images crafted by
+                   <b><i>PSFD</i></b> as seen in the above figure. The editing results of original
+                   images display natural and subtle alterations, while the editing results of immunized images reveal
+                   distortions or noticeable editing artifacts, which would alert users and prevent attackers from deceiving
+                   them with manipulated content.
+<!--                This research is devoted to examining the security and risk issues associated with applying LLMs and VLMs to embodied AI. Our ultimate goal is to enhance the safety and reliability of embodied AI systems, thereby making a positive contribution to society. This research includes examples that may be considered harmful, offensive, or otherwise inappropriate. These examples are included solely for research purposes to illustrate vulnerabilities and enhance the security of embodied AI systems. They do not reflect the personal views or beliefs of the authors. We are committed to principles of respect for all individuals and strongly oppose any form of crime or violence. Some sensitive details in the examples have been redacted to minimize potential harm. Furthermore, we have taken comprehensive measures to ensure the safety and well-being of all participants involved in this study.-->
+                 </p>
             </li>
         </ul>
 
         <br><br>
         </div>
-      </div>
-    </div>
-
-
-
-    <div class="row">
-      <div class="col-md-10 col-md-offset-1">
-        <h3>
-          Citation
-        </h3>
-        If you find our project useful, please consider citing:
-        <br />
-
-        <div class="CodeMirror cm-s-default CodeMirror-wrap">
-          <div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 38.28px; left: 647px;">
-            <textarea autocorrect="off" autocapitalize="off" spellcheck="false"
-              style="position: absolute; padding: 0px; width: 1000px; height: 1em; outline: none;"
-              tabindex="0"></textarea>
-          </div>
-          <div class="CodeMirror-vscrollbar" cm-not-content="true">
-            <div style="min-width: 1px; height: 0px;"></div>
-          </div>
-          <div class="CodeMirror-hscrollbar" cm-not-content="true">
-            <div style="height: 100%; min-height: 1px; width: 0px;"></div>
-          </div>
-          <div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div>
-          <div class="CodeMirror-gutter-filler" cm-not-content="true"></div>
-          <div class="CodeMirror-scroll" tabindex="-1">
-            <div class="CodeMirror-sizer"
-              style="margin-left: 0px; margin-bottom: -15px; border-right-width: 15px; min-height: 111px; padding-right: 0px; padding-bottom: 0px;">
-              <div style="position: relative; top: 0px;">
-                <div class="CodeMirror-lines">
-                  <div style="position: relative; outline: none;">
-                    <div class="CodeMirror-measure">AخA</div>
-                    <div class="CodeMirror-measure"></div>
-                    <div style="position: relative; z-index: 1;"></div>
-                    <div class="CodeMirror-cursors">
-                      <div class="CodeMirror-cursor" style="left: 647px; top: 34.28px; height: 17.1406px;">&nbsp;</div>
-                    </div>
-                    <div class="CodeMirror-code" style="">
-                      <pre
-                        class=" CodeMirror-line "><span style="padding-right: 0.1px;">@misc{zhang2024threatsembodiedmultimodalllms,</span></pre>
-                      <pre
-                        class=" CodeMirror-line "><span style="padding-right: 0.1px;"> &nbsp;  title={The Threats of Embodied Multimodal LLMs: Jailbreaking  Robotic Manipulation in the Physical World},</span></pre>
-                      <pre
-                        class=" CodeMirror-line "><span style="padding-right: 0.1px;"> &nbsp;  author={Hangtao Zhang and Chenyu Zhu and Xianlong Wang and Ziqi Zhou and Yichen Wang and Lulu Xue and Minghui Li and Shengshan Hu and Leo Yu Zhang},</span></pre>
-                      <pre
-                        class=" CodeMirror-line "><span style="padding-right: 0.1px;"> &nbsp;  year={2024},</span></pre>
-                      <pre
-                        class=" CodeMirror-line "><span style="padding-right: 0.1px;"> &nbsp;  eprint={2407.20242},</span></pre>
-                      <pre
-                        class=" CodeMirror-line "><span style="padding-right: 0.1px;"> &nbsp;  archivePrefix={arXiv},</span></pre>
-                      <pre
-                        class=" CodeMirror-line "><span style="padding-right: 0.1px;"> &nbsp;  primaryClass={cs.CY}</span></pre>
-                      <pre class=" CodeMirror-line "><span style="padding-right: 0.1px;">} </span>
-                      </pre>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div style="position: absolute; height: 15px; width: 1px; top: 111px;"></div>
-            <div class="CodeMirror-gutters" style="display: none; height: 126px;"></div>
-          </div>
-        </div>
 
       </div>
     </div>
+
+
+
+<!--    <div class="row">-->
+<!--      <div class="col-md-10 col-md-offset-1">-->
+<!--        <h3>-->
+<!--          Citation-->
+<!--        </h3>-->
+<!--        If you find our project useful, please consider citing:-->
+<!--        <br />-->
+
+<!--        <div class="CodeMirror cm-s-default CodeMirror-wrap">-->
+<!--          <div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 38.28px; left: 647px;">-->
+<!--            <textarea autocorrect="off" autocapitalize="off" spellcheck="false"-->
+<!--              style="position: absolute; padding: 0px; width: 1000px; height: 1em; outline: none;"-->
+<!--              tabindex="0"></textarea>-->
+<!--          </div>-->
+<!--          <div class="CodeMirror-vscrollbar" cm-not-content="true">-->
+<!--            <div style="min-width: 1px; height: 0px;"></div>-->
+<!--          </div>-->
+<!--          <div class="CodeMirror-hscrollbar" cm-not-content="true">-->
+<!--            <div style="height: 100%; min-height: 1px; width: 0px;"></div>-->
+<!--          </div>-->
+<!--          <div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div>-->
+<!--          <div class="CodeMirror-gutter-filler" cm-not-content="true"></div>-->
+<!--          <div class="CodeMirror-scroll" tabindex="-1">-->
+<!--            <div class="CodeMirror-sizer"-->
+<!--              style="margin-left: 0px; margin-bottom: -15px; border-right-width: 15px; min-height: 111px; padding-right: 0px; padding-bottom: 0px;">-->
+<!--              <div style="position: relative; top: 0px;">-->
+<!--                <div class="CodeMirror-lines">-->
+<!--                  <div style="position: relative; outline: none;">-->
+<!--                    <div class="CodeMirror-measure">AخA</div>-->
+<!--                    <div class="CodeMirror-measure"></div>-->
+<!--                    <div style="position: relative; z-index: 1;"></div>-->
+<!--                    <div class="CodeMirror-cursors">-->
+<!--                      <div class="CodeMirror-cursor" style="left: 647px; top: 34.28px; height: 17.1406px;">&nbsp;</div>-->
+<!--                    </div>-->
+<!--                    <div class="CodeMirror-code" style="">-->
+<!--                      <pre-->
+<!--                        class=" CodeMirror-line "><span style="padding-right: 0.1px;">@misc{zhang2024threatsembodiedmultimodalllms,</span></pre>-->
+<!--                      <pre-->
+<!--                        class=" CodeMirror-line "><span style="padding-right: 0.1px;"> &nbsp;  title={The Threats of Embodied Multimodal LLMs: Jailbreaking  Robotic Manipulation in the Physical World},</span></pre>-->
+<!--                      <pre-->
+<!--                        class=" CodeMirror-line "><span style="padding-right: 0.1px;"> &nbsp;  author={Hangtao Zhang and Chenyu Zhu and Xianlong Wang and Ziqi Zhou and Yichen Wang and Lulu Xue and Minghui Li and Shengshan Hu and Leo Yu Zhang},</span></pre>-->
+<!--                      <pre-->
+<!--                        class=" CodeMirror-line "><span style="padding-right: 0.1px;"> &nbsp;  year={2024},</span></pre>-->
+<!--                      <pre-->
+<!--                        class=" CodeMirror-line "><span style="padding-right: 0.1px;"> &nbsp;  eprint={2407.20242},</span></pre>-->
+<!--                      <pre-->
+<!--                        class=" CodeMirror-line "><span style="padding-right: 0.1px;"> &nbsp;  archivePrefix={arXiv},</span></pre>-->
+<!--                      <pre-->
+<!--                        class=" CodeMirror-line "><span style="padding-right: 0.1px;"> &nbsp;  primaryClass={cs.CY}</span></pre>-->
+<!--                      <pre class=" CodeMirror-line "><span style="padding-right: 0.1px;">} </span>-->
+<!--                      </pre>-->
+<!--                    </div>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div style="position: absolute; height: 15px; width: 1px; top: 111px;"></div>-->
+<!--            <div class="CodeMirror-gutters" style="display: none; height: 126px;"></div>-->
+<!--          </div>-->
+<!--        </div>-->
+
+<!--      </div>-->
+<!--    </div>-->
 
 
 
